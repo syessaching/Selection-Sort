@@ -35,7 +35,7 @@ int main(int argc, char**  argv){
         int n = stoi(tmp);//convert string to integer
         
         //open the file to write the sorted records
-        ofs.open("sorted.txt", ios::out);
+        ofs.open("sortedb.txt", ios::out);
         // cout<< n <<endl;
         
 
@@ -69,10 +69,11 @@ int main(int argc, char**  argv){
         for(int i=0; i<n-1; i++){
             int minIndex = i;
             for(int j=i+1; j<n; j++){
+                comparison++;
                 if(employees[j]->getID() < employees[minIndex]->getID()){
                     minIndex = j;
                 }
-            comparison++;
+            
             }
             //swap the records
             Employee* temp = employees[i];
@@ -81,7 +82,7 @@ int main(int argc, char**  argv){
                 
             
 
-                //print the sorted records
+                // print the sorted records
                 // if (n <= 10) { 
                 //     cout << " ";
                 //     for (int k = 0; k < n; k++) {
